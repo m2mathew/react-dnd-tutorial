@@ -1,8 +1,19 @@
+// External Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Internal Dependencies
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
+import Knight from './Knight';
+import Square from './Square';
+
+// Render to the DOM
+ReactDOM.render(
+  <Square black>
+    <Knight />
+  </Square>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();
