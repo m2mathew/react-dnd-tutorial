@@ -2,35 +2,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// Local Variables
-const squareDefaultStyles = {
-  height: '100%',
-  width: '100%',
-};
-
 // Component Definition
 export default class Square extends Component {
   static propTypes = {
-    black: PropTypes.bool
+    black: PropTypes.bool,
+    children: PropTypes.node,
   };
 
   render() {
-    const {
-      black,
-      children,
-    } = this.props;
+    const { black } = this.props;
     const fill = black ? 'black' : 'white';
     const stroke = black ? 'white' : 'black';
 
-    const squareStyles = {
-      ...squareDefaultStyles,
-      backgroundColor: fill,
-      color: stroke,
-    };
-
     return (
-      <div style={squareStyles}>
-        {children}
+      <div style={{
+        backgroundColor: fill,
+        color: stroke,
+        width: '100%',
+        height: '100%'
+      }}>
+        {this.props.children}
       </div>
     );
   }

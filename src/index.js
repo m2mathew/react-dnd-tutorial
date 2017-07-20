@@ -5,14 +5,11 @@ import ReactDOM from 'react-dom';
 // Internal Dependencies
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import Knight from './Knight';
-import Square from './Square';
+import Board from './Board';
 
 // Render to the DOM
 ReactDOM.render(
-  <Square black>
-    <Knight />
-  </Square>,
+  <Board knightPosition={[0, 0]} />,
   document.getElementById('root')
 );
 
