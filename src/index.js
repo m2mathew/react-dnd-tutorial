@@ -6,11 +6,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Board from './Board';
+import { observe } from './Game';
+
+const rootEl = document.getElementById('root');
 
 // Render to the DOM
-ReactDOM.render(
-  <Board knightPosition={[0, 0]} />,
-  document.getElementById('root')
+observe(knightPosition =>
+  ReactDOM.render(
+    <Board knightPosition={knightPosition} />,
+    rootEl,
+  )
 );
 
 registerServiceWorker();
