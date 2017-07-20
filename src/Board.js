@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 // Internal Dependencies
 import Square from './Square';
 import Knight from './Knight';
+import {
+  canMoveKnight,
+  moveKnight,
+} from './Game';
 
 // Component Definition
 export default class Board extends Component {
@@ -12,6 +16,12 @@ export default class Board extends Component {
     knightPosition: PropTypes.arrayOf(
       PropTypes.number.isRequired
     ).isRequired
+  }
+
+  handleSquareClick(toX, toY) {
+    if (canMoveKnight(toX, toY)) {
+      moveKnight(toX, toY);
+    }
   }
 
   renderSquare(i) {
@@ -27,6 +37,7 @@ export default class Board extends Component {
     return (
       <div
         key={i}
+        onClick={() => this.handleSquareClick(x, y)}
         style={{ width: '12.5%', height: '12.5%' }}
       >
         <Square black={black}>
