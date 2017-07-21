@@ -1,3 +1,5 @@
-export const ItemTypes = {
+const ItemTypes = {
   KNIGHT: 'knight'
 };
+
+export default ItemTypes;

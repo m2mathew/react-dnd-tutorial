@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
 
 // Internal Dependencies
-import { ItemTypes } from './Constants';
+import ItemTypes from './Constants';
 
 // Local Variables
 const knightDefaultStyles = {
