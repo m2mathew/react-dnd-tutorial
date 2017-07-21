@@ -1,6 +1,8 @@
 // External Dependencies
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
 
 // Internal Dependencies
 import Square from './Square';
@@ -11,7 +13,7 @@ import {
 } from './Game';
 
 // Component Definition
-export default class Board extends Component {
+class Board extends Component {
   static PropTypes = {
     knightPosition: PropTypes.arrayOf(
       PropTypes.number.isRequired
@@ -65,3 +67,5 @@ export default class Board extends Component {
     )
   }
 }
+
+export default DragDropContext(HTML5Backend)(Board);
