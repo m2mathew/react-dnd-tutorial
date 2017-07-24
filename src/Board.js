@@ -6,7 +6,6 @@ import { DragDropContext } from 'react-dnd';
 
 // Internal Dependencies
 import BoardSquare from './BoardSquare';
-import Square from './Square';
 import Knight from './Knight';
 import {
   canMoveKnight,

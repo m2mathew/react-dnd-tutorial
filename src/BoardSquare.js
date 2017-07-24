@@ -31,6 +31,10 @@ const overStyles = {
 
 // Local Functions
 const squareTarget = {
+  canDrop(props) {
+    return canMoveKnight(props.x, props.y);
+  },
+
   drop(props) {
     moveKnight(props.x, props.y);
   }
@@ -40,7 +44,7 @@ function collect(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
-    // canDrop: monitor.canDrop(),
+    canDrop: monitor.canDrop(),
   };
 }
 
